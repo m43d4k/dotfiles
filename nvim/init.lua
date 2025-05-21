@@ -73,3 +73,7 @@ vim.api.nvim_set_keymap('n', '<Down>', 'gj', { noremap = true })
 vim.api.nvim_set_keymap('n', '<Up>', 'gk', { noremap = true })
 vim.api.nvim_set_keymap('n', 'gj', 'j', { noremap = true })
 vim.api.nvim_set_keymap('n', 'gk', 'k', { noremap = true })
+
+-- gh で行頭、gl で行末に移動
+vim.keymap.set("n", "gh", "^", { noremap = true })
+vim.keymap.set("n", "gl", "g_", { noremap = true })
