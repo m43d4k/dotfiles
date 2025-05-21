@@ -1,0 +1,8 @@
+# zsh補完を拡張
+zsh-users/zsh-completions
+
+# 入力補助：過去の履歴から予測補完
+zsh-users/zsh-autosuggestions
+
+# 入力補助：コマンド構文を色分け表示
+zsh-users/zsh-syntax-highlighting

@@ -1,0 +1,38 @@
+# macOS 固有ファイル
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# バックアップ・一時ファイル
+*~
+*.swp
+*.swo
+*.bak
+*.tmp
+*.orig
+
+# Neovim キャッシュ（必要に応じて）
+nvim/.netrwhist
+nvim/undo/
+nvim/backup/
+nvim/swap/
+
+# SSH鍵や機密ファイル（誤って置かないための保険）
+*.pem
+*.key
+*.crt
+*.pub
+*.gpg
+
+# ローカル固有のbrewファイル（lockファイルなど）
+Brewfile.lock.json
+
+# その他キャッシュ系
+.cache/
+.zcompdump*
+.zsh_history
+zsh/.zsh_history
+zsh/.zcompdump*
+
+# VSCodeなどが勝手に作るファイル（万一作業する場合）
+.vscode/

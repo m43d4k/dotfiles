@@ -1,0 +1,37 @@
+[user]
+	name = m43d4k
+	email = m43d4k@gmail.com
+
+[core]
+	editor = nvim
+	ignorecase = true
+	quotepath = false
+
+[init]
+	defaultBranch = main
+
+[commit]
+	template = /Users/m43d4k/.gitmessage
+
+[color]
+	ui = true
+	diff = auto
+	status = auto
+	branch = auto
+
+[status]
+	short = true
+
+[push]
+	default = simple
+
+[pull]
+	rebase = false
+
+[alias]
+	st = status
+	co = checkout
+	br = branch
+	ci = commit
+	df = diff
+	lg = log --oneline --graph --decorate --all
