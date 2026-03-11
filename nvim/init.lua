@@ -43,6 +43,7 @@ vim.o.ttimeoutlen = 50
 -- 永続Undo
 vim.o.undofile = true
 vim.o.undodir = vim.fn.stdpath('cache') .. '/undo'
+vim.fn.mkdir(vim.o.undodir, 'p')
 
 vim.cmd("syntax on")
 vim.opt.termguicolors = true
@@ -77,3 +78,4 @@ vim.api.nvim_set_keymap('n', 'gk', 'k', { noremap = true })
 -- gh で行頭、gl で行末に移動
 vim.keymap.set("n", "gh", "^", { noremap = true })
 vim.keymap.set("n", "gl", "g_", { noremap = true })
+
