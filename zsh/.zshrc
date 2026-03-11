@@ -6,6 +6,7 @@ umask 022
 export LANG=ja_JP.UTF-8
 export EDITOR=nvim
 export VISUAL=nvim
+export PATH="$HOME/.local/bin:$PATH"
 
 limit coredumpsize 0  # コアダンプを吐かない
 
@@ -184,3 +185,4 @@ rgcopy() {
   zle reset-prompt
 }
 zle -N rgcopy
+
