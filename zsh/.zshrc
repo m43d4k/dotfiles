@@ -150,27 +150,6 @@ claude_init() {
 }
 
 #========================================
-# ghq look + fzf 連携
-#========================================
-ghq() {
-    if [[ $1 == "look" ]]; then
-        if [[ -n $2 ]]; then
-            repo_name="$2"
-            exact_matched=$(command ghq list --full-path --exact "$repo_name")
-            if [[ -n "$exact_matched" ]]; then
-                cd "$exact_matched"
-            else
-                cd $(command ghq list --full-path "$repo_name" | fzf)
-            fi
-        else
-            cd $(command ghq list --full-path | fzf)
-        fi
-    else
-        command ghq "$@"
-    fi
-}
-
-#========================================
 # fgc: fzfでGitブランチを選んでcheckout
 #========================================
 fgc() {
