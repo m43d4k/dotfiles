@@ -6,6 +6,9 @@ echo "リンクを作成します..."
 ln -sf ~/dotfiles/zsh/.zshrc ~/.zshrc
 ln -sf ~/dotfiles/zsh/.zprofile ~/.zprofile
 ln -sf ~/dotfiles/zsh/.zsh_plugins.txt ~/.zsh_plugins.txt
+# Claude Code のローカル設定ファイル
+mkdir -p ~/.config/zsh
+ln -sf ~/dotfiles/zsh/claude/template.settings.local.json ~/.config/zsh/template.settings.local.json
 
 # Git の設定
 ln -sf ~/dotfiles/git/.gitconfig ~/.gitconfig
@@ -19,5 +22,4 @@ for colorscheme in ~/dotfiles/nvim/colors/*.vim; do
 done
 
 # Starship プロンプトの設定
-mkdir -p ~/.config
 ln -sf ~/dotfiles/starship/starship.toml ~/.config/starship.toml

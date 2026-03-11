@@ -119,6 +119,37 @@ alias gs='git status'       # Git の作業状況確認
 alias gc='git commit'       # Git のコミット
 
 #========================================
+# Claude Code 用ユーティリティ
+#========================================
+claude_init() {
+  local target_dir=".claude"
+  local target_file="$target_dir/settings.local.json"
+  local template_file="$HOME/.config/zsh/template.settings.local.json"
+
+  if [[ -f "$target_file" ]]; then
+    echo "Error: settings.local.json already exists at $target_file" >&2
+    return 1
+  fi
+
+  if [[ ! -f "$template_file" ]]; then
+    echo "Error: Template file not found at $template_file" >&2
+    return 1
+  fi
+
+  if ! mkdir -p "$target_dir"; then
+    echo "Error: Failed to create .claude directory" >&2
+    return 1
+  fi
+
+  if ! cp "$template_file" "$target_file"; then
+    echo "Error: Failed to copy template file" >&2
+    return 1
+  fi
+
+  echo "✓ Successfully created $target_file"
+}
+
+#========================================
 # ghq look + fzf 連携
 #========================================
 ghq() {
@@ -185,4 +216,3 @@ rgcopy() {
   zle reset-prompt
 }
 zle -N rgcopy
-
