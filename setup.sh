@@ -24,8 +24,11 @@ done
 # Starship プロンプトの設定
 ln -sf ~/dotfiles/starship/starship.toml ~/.config/starship.toml
 
+# Ghostty の設定
+mkdir -p ~/.config/ghostty
+ln -sf ~/dotfiles/ghostty/config ~/.config/ghostty/config
+
 #Claude の設定
 chmod +x ~/dotfiles/claude/hooks/enforce-uv.sh
 mkdir -p ~/.claude/hooks
 ln -sf ~/dotfiles/claude/hooks/enforce-uv.sh ~/.claude/hooks/enforce-uv.sh
-

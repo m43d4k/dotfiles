@@ -1,0 +1,62 @@
+# --- 外観 ---
+font-family = "Firple Regular"
+font-size = 15
+
+# カラーテーマ
+theme = "TokyoNight Storm"
+
+# ウィンドウ内側の余白
+window-padding-x = 10
+window-padding-y = 10
+window-padding-balance = true
+
+# 行の高さを少し広げる
+adjust-cell-height = 10%
+
+# 非アクティブな分割ペインを暗くする
+unfocused-split-opacity = 0.3
+
+
+# --- macOS ---
+# タイピング中はマウスカーソルを隠す
+mouse-hide-while-typing = true
+
+# macOS標準のネイティブ全画面を使わない
+macos-non-native-fullscreen = true
+
+
+# --- クリップボード / 選択 ---
+# 選択したテキストを自動でコピーする
+copy-on-select = true
+
+# クリップボードの読み取りを許可
+clipboard-read = allow
+
+# クリップボードへの書き込みを許可
+clipboard-write = allow
+
+
+# --- キーバインド ---
+# 新しいタブを開く
+keybind = cmd+t=new_tab
+
+# 右に分割して新しいペインを作る
+keybind = cmd+d=new_split:right
+
+# 下に分割して新しいペインを作る
+keybind = cmd+shift+d=new_split:down
+
+# 分割ペイン間を移動する
+keybind = cmd+alt+left=goto_split:left
+keybind = cmd+alt+right=goto_split:right
+keybind = cmd+alt+up=goto_split:top
+keybind = cmd+alt+down=goto_split:bottom
+
+# 分割ペインのサイズを調整する
+keybind = cmd+shift+left=resize_split:left,20
+keybind = cmd+shift+right=resize_split:right,20
+keybind = cmd+shift+up=resize_split:up,20
+keybind = cmd+shift+down=resize_split:down,20
+
+# 現在のペインを閉じる
+keybind = cmd+w=close_surface
