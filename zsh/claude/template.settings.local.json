@@ -4,23 +4,30 @@
       "WebSearch",
       "Bash(cat *)",
       "Bash(tree *)",
-      "Bash(grep:*)",
-      "Bash(find:*)"
+      "Bash(grep *)",
+      "Bash(find *)",
+      "Bash(uv *)"
     ],
     "ask": [
       "Bash(rm *)",
-      "Bash(rm -rf *)",
       "Bash(git commit *)",
       "Bash(git push *)",
       "Bash(git reset *)",
       "Bash(git rebase *)",
+      "Bash(git checkout -- *)",
+      "Bash(git branch -D *)",
+      "Bash(npm install *)",
       "Bash(curl *)",
-      "Bash(wget *)"
+      "Bash(wget *)",
+      "Bash(chmod *)",
+      "Bash(kill *)"
     ],
     "deny": [
       "Bash(sudo *)",
       "Bash(dd *)",
       "Bash(mkfs *)",
+      "Bash(chown *)",
+      "Bash(killall *)",
       "Bash(psql *)",
       "Bash(mysql *)",
       "Bash(mongod *)",
@@ -40,5 +47,39 @@
       "Edit(**/secrets/**)",
       "mcp__supabase__execute_sql"
     ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/enforce-uv.sh"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "terminal-notifier -title 'Claude Code: 通知' -message \"${CLAUDE_NOTIFICATION}\" -sound default"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "terminal-notifier -title 'Claude Code: タスク完了' -message \"Task finished in ${CLAUDE_PROJECT_DIR}\" -sound default"
+          }
+        ]
+      }
+    ]
   }
 }
+

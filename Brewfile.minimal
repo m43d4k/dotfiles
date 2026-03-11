@@ -2,22 +2,23 @@
 tap "homebrew/cask-fonts"  # fontをインストールするためのtap
 
 # === 基本的なCLIツール群（zsh環境とエディタのセットアップ） ===
-brew "antidote"         # zshプラグインマネージャ（.zshrcで使用）
-brew "bat"              # catの見やすい代替ツール（fzfのプレビューなどに使用可能）
-brew "coreutils"        # GNU版の基本コマンド群（ls, cpなどの置き換え）
-brew "curl"             # データ取得コマンド（API叩くときなどに必須）
-brew "fzf"              # ファジー検索ツール（cd補完やghq連携に使用）
-brew "git"              # バージョン管理システム（すべての基盤）
-brew "jq"               # JSON整形・抽出ツール（APIレスポンス解析などに便利）
-brew "mise"             # 言語のバージョン管理（Node, Pythonなどを管理）
-brew "uv"               # 高速な Python 用パッケージ管理・実行ツール
-brew "neovim"           # CLI用の軽量エディタ（nvimをエディタとして指定している場合に必須）
-brew "ripgrep"          # 高速grepツール（fzfのファイル検索に使用）
-brew "starship"         # 高機能なシェルプロンプト（zshと統合）
-brew "tree"             # ディレクトリ構造をツリー表示
-brew "unzip"            # zipファイル解凍ツール
-brew "wget"             # curlとは別系統のダウンロードツール
-brew "zoxide"           # 賢いcdコマンド（zshrcに設定済みなら必須）
+brew "antidote"          # zshプラグインマネージャ（.zshrcで使用）
+brew "bat"               # catの見やすい代替ツール（fzfのプレビューなどに使用可能）
+brew "coreutils"         # GNU版の基本コマンド群（ls, cpなどの置き換え）
+brew "curl"              # データ取得コマンド（API叩くときなどに必須）
+brew "fzf"               # ファジー検索ツール（cd補完やghq連携に使用）
+brew "git"               # バージョン管理システム（すべての基盤）
+brew "jq"                # JSON整形・抽出ツール（APIレスポンス解析などに便利）
+brew "mise"              # 言語のバージョン管理（Node, Pythonなどを管理）
+brew "uv"                # 高速な Python 用パッケージ管理・実行ツール
+brew "neovim"            # CLI用の軽量エディタ（nvimをエディタとして指定している場合に必須）
+brew "ripgrep"           # 高速grepツール（fzfのファイル検索に使用）
+brew "starship"          # 高機能なシェルプロンプト（zshと統合）
+brew "tree"              # ディレクトリ構造をツリー表示
+brew "unzip"             # zipファイル解凍ツール
+brew "wget"              # curlとは別系統のダウンロードツール
+brew "zoxide"            # 賢いcdコマンド（zshrcに設定済みなら必須）
+brew "terminal-notifier" # Mac用ユーザー通知
 
 # === CLI表示用フォント（StarshipやNeovimでアイコン表示に使用） ===
 cask "font-hackgen-nerd"  # 日本語対応のNerd Font（Powerline記号含む）
