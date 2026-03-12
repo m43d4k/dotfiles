@@ -1,0 +1,4 @@
+- Python は常に `uv run python` を使う。
+- パッケージ操作は `uv add` / `uv remove` / `uv pip` を使う。
+- hook が Python / pip を block したら、返された代替コマンドに従って再実行する。
+- `/usr/bin/python`, `python`, `pip` を直接使わない。

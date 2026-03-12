@@ -123,16 +123,29 @@ alias gc='git commit'       # Git のコミット
 #========================================
 claude_init() {
   local target_dir=".claude"
-  local target_file="$target_dir/settings.local.json"
-  local template_file="$HOME/.config/zsh/template.settings.local.json"
+  local target_local_settings_json="$target_dir/settings.local.json"
+  local target_local_claude_md="$target_dir/CLAUDE.local.md"
 
-  if [[ -f "$target_file" ]]; then
-    echo "Error: settings.local.json already exists at $target_file" >&2
+  local template_local_settings_json="$HOME/.config/zsh/template.settings.local.json"
+  local template_local_claude_md="$HOME/.config/zsh/template.CLAUDE.local.md"
+
+  if [[ -f "$target_local_settings_json" ]]; then
+    echo "Error: settings.local.json already exists at $target_local_settings_json" >&2
     return 1
   fi
 
-  if [[ ! -f "$template_file" ]]; then
-    echo "Error: Template file not found at $template_file" >&2
+  if [[ -f "$target_local_claude_md" ]]; then
+    echo "Error: CLAUDE.local.md already exists at $target_local_claude_md" >&2
+    return 1
+  fi
+
+  if [[ ! -f "$template_local_settings_json" ]]; then
+    echo "Error: Template file not found at $template_local_settings_json" >&2
+    return 1
+  fi
+
+  if [[ ! -f "$template_local_claude_md" ]]; then
+    echo "Error: Template file not found at $template_local_claude_md" >&2
     return 1
   fi
 
@@ -141,12 +154,18 @@ claude_init() {
     return 1
   fi
 
-  if ! cp "$template_file" "$target_file"; then
-    echo "Error: Failed to copy template file" >&2
+  if ! cp "$template_local_settings_json" "$target_local_settings_json"; then
+    echo "Error: Failed to copy template file to $target_local_settings_json" >&2
     return 1
   fi
 
-  echo "✓ Successfully created $target_file"
+  if ! cp "$template_local_claude_md" "$target_local_claude_md"; then
+    echo "Error: Failed to copy template file to $target_local_claude_md" >&2
+    return 1
+  fi
+
+  echo "✓ Successfully created $target_local_settings_json"
+  echo "✓ Successfully created $target_local_claude_md"
 }
 
 #========================================
