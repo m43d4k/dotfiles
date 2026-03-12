@@ -71,6 +71,33 @@ mise use python@3.12
 ```
 - プロジェクトフォルダごとに `python`, `node` などのバージョンを切り替え可能
 
+#### ラッパー関数：`mvenv`
+
+```sh
+# mise で Python バージョンを指定して .venv を作成
+
+mvenv 3.12
+```
+
+- `mise use "python@<version>"` を実行
+- その後、`mise` が選んだ Python を使って `uv venv` で仮想環境を作成
+- 例: `mvenv 3.12`
+
+---
+
+### Claude Code 用ローカルテンプレートのコピー
+
+```sh
+# .claude/ に settings.local.json と CLAUDE.local.md をコピー
+
+claude_init
+```
+
+- `.claude` ディレクトリを作成
+- `~/.config/zsh/template.settings.local.json` を `.claude/settings.local.json` にコピー
+- `~/.config/zsh/template.CLAUDE.local.md` を `.claude/CLAUDE.local.md` にコピー
+- 既に対象ファイルが存在する場合は上書きせず終了
+
 ---
 
 ### その他
@@ -82,7 +109,7 @@ mise use python@3.12
 ## 前提ツール（最低限入れておく必要があるもの）
 
 ```sh
-brew install zoxide fzf ghq starship mise ripgrep bat
+brew install zoxide fzf starship mise uv ripgrep bat jq
 ```
 
 ---
