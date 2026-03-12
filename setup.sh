@@ -9,7 +9,7 @@ ln -sf ~/dotfiles/zsh/.zsh_plugins.txt ~/.zsh_plugins.txt
 # Claude Code のローカル設定ファイル
 mkdir -p ~/.config/zsh
 ln -sf ~/dotfiles/zsh/claude/template.settings.local.json ~/.config/zsh/template.settings.local.json
-ln -sf ~/dotfiles/zsh/claude/template.CLAUDE.local.md ~/.config/zsh/CLAUDE.local.md
+ln -sf ~/dotfiles/zsh/claude/template.CLAUDE.local.md ~/.config/zsh/template.CLAUDE.local.md
 
 # Git の設定
 ln -sf ~/dotfiles/git/.gitconfig ~/.gitconfig
