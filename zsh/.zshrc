@@ -169,6 +169,19 @@ claude_init() {
 }
 
 #========================================
+# Python バージョン固定 + venv 作成
+#========================================
+mvenv() {
+  if [[ -z "$1" ]]; then
+    echo "Usage: mvenv <python-version>" >&2
+    return 1
+  fi
+
+  mise use "python@$1" || return 1
+  uv venv --python "$(mise which python)" || return 1
+}
+
+#========================================
 # fgc: fzfでGitブランチを選んでcheckout
 #========================================
 fgc() {
